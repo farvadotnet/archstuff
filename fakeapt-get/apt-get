@@ -5,8 +5,12 @@ function ask()
 {
   read -p "Run '$@' y/n ? " answer
   case $answer in
-    [Yy]) exec $@ ;;
-    *) exit 1
+    [Yy]) 
+      exec $@
+      ;;
+    *) 
+      echo "Aborted."
+      exit 1
   esac
 }
 
@@ -23,9 +27,9 @@ case $1 in
     ask "pacman -Qdtq | pacman -Rs -"
   ;;
   update)
-    echo Partial upgrades are unsupported 
-    echo Do a full upgrade instead: \
-         pacman -Syu or apt-get upgrade
+    echo "Partial upgrades are unsupported" 
+    echo "Do a full upgrade instead: \
+         pacman -Syu or apt-get upgrade"
     exit 0
   ;;
   upgrade)
