@@ -1,0 +1,1 @@
+This is an incomplete apt-get to pacman translator. It only implements the functions I use most often. It's purpose is to jog my memory. That's why it tells you what the equivalent syntax. For safety reasons, the script asks before executing the command, just in case it's about to do something the user didn't intend. 
