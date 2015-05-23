@@ -24,7 +24,8 @@ case $1 in
     ask "pacman -Rc $@"
   ;;
   autoremove)
-    ask "pacman -Qdtq | pacman -Rs -"
+    ask "pacman -Qdtq | pacman -Rs -" || 
+    echo "This probably means there's nothing to remove."
   ;;
   update)
     echo Partial upgrades are unsupported 
